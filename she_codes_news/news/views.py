@@ -3,7 +3,6 @@ from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
 
-
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
     context_object_name = "all_stories"

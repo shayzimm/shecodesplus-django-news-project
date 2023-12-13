@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ user_profile.user.username }}'s Profile</h1>
+
+  <div>
+    {% if user_profile.profile_picture %}
+      <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+    {% else %}
+      <p>No profile picture available</p>
+    {% endif %}
+  </div>
+
+  <p>Bio: {{ user_profile.bio }}</p>
+
+  <h2>Published Stories</h2>
+  <ul>
+    {% for story in user_stories %}
+      <li>{{ story.title }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
