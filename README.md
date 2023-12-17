@@ -35,7 +35,7 @@ Run server
 python manage.py runserver
 
 ## Database Schema
-![Image of database schema](shecodesplus-django-news-project/ERD.png/ERD.png)
+![Image of database schema](shecodesplus-django-news-project/ERD.png)
 
 ## Project Features
 
