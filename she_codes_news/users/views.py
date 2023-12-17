@@ -1,10 +1,11 @@
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from news.models import NewsStory  # Adjust the import path based on your actual project structure
-from .forms import CustomUserCreationForm
+from django.shortcuts import render, redirect
+from news.models import NewsStory  
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import UserProfile, CustomUser
+from django.core.exceptions import PermissionDenied
 
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
@@ -34,10 +35,13 @@ def AccountView(request):
 class UpdateProfileView(UpdateView):
     model = CustomUser
     template_name = "users/update_profile.html"
-    fields = ['username', 'email']  # Fields that can be updated in the profile
-    success_url = reverse_lazy('users:account_view')  # Redirect to the account view after successful update
+    fields = ['username', 'email', 'bio']  # Fields that can be updated in the profile
+    success_url = reverse_lazy('users:account')  # Redirect to the account view after successful update
 
 class DeleteProfileView(DeleteView):
     model = CustomUser
     template_name = "users/delete_profile.html"
     success_url = reverse_lazy('news:index')  # Redirect to the news index after successful profile deletion
+
+def login_redirect(request):
+    return redirect (reverse_lazy('users:account', kwargs={'pk': request.user.id}))

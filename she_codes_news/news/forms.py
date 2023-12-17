@@ -1,7 +1,9 @@
 # news/forms.py
 from django import forms
 from django.forms import ModelForm
-from .models import NewsStory
+from .models import NewsStory, Comment
+from django.utils import timezone
+
 class StoryForm(ModelForm):
     class Meta:
         model = NewsStory
@@ -16,3 +18,8 @@ class StoryForm(ModelForm):
                 }
             ),
         }
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["author", "text"]
