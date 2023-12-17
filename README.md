@@ -6,33 +6,33 @@ A news site using Django that allows users to create their own accounts, write t
 Starter code for the Plus Django project can be found in the Plus Resources: Django Project Starter
 
 ## How To Run This Code
-Please note these instructions are for MAC users
+FYI the following instructions are for MAC
 
-Clone repo
+- Clone repo
 
-Create virtual environment (venv)
+- Create virtual environment (venv)
 
-python -m venv venv
+    `python -m venv venv`
 
-Initialise repo
+- Initialise repo
 
-git init
+    `git init`
 
-Activate venv
+- Activate venv
 
-source venv/bin/activate
+    `source .venv/bin/activate`
 
-Download the requirements
+- Download the requirements
 
-python -m pip install -r requirements.txt
+    `python -m pip install -r requirements.txt`
 
-Migrate the database
+- Migrate the database
 
-python manage.py loaddata news
+    `python manage.py loaddata news`
 
-Run server
+- Run server
 
-python manage.py runserver
+    `python manage.py runserver`
 
 ## Database Schema
 ![Image of database schema](ERD.png)
@@ -51,7 +51,7 @@ python manage.py runserver
 
 - [x] Create Account page
 
-- [ ] View stories by author
+- [x] View stories by author
 
 - [x] "Log-in" button only visible when no user is logged in/"Log-out" buttononly visible when a user *is* logged in
 
@@ -61,18 +61,18 @@ python manage.py runserver
 
 - [x] Add the ability to update and delete stories (consider permissions - whoshould be allowed to update or and/or delete stories).
 
-- [ ] dd categories to the stories and allow the user to search for stories by category.
+- [ ] Add categories to the stories and allow the user to search for stories by category.
 
 - [ ] Add the ability to “favourite” stories and see a page with your favouritestories.
 
-- [ ] Our form for creating stories requires you to add the publication date,update this to automatically save the publication date as the day thestory was first published (maybe you could then add a field to show when the story was updated).
+- [ ] Automatically publish stories on the day they are created, rather than allowing users to select a date.
 
-- [ ] Gracefully handle the error where someone tries to create a new story when they are not logged in.
+- [x] Gracefully handle the error where someone tries to create a new story when they are not logged in.
 
 #### Future Developments:
 
 Here are some features yet to be implemented:
-* "Delete" function for user accounts
+* Allow users to delete their accounts
 * Search/filter by story categories
-* "Likes" function
+* Allow users to favourite stories ie. 'likes'
 * Keyword Search
