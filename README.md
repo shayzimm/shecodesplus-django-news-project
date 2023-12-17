@@ -35,7 +35,7 @@ Run server
 python manage.py runserver
 
 ## Database Schema
-![Image of database schema](she_codes_news/ERD.png)
+![Image of database schema](ERD.png)
 
 ## Project Features
 
